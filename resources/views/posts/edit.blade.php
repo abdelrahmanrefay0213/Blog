@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('title') create @endsection
+@section('title') Edit @endsection
 @section('content')
-<form method="POST" action="{{route('posts.store')}}">
+<form method="POST" action="{{route('posts.update',1)}}">
     @csrf
+    @method('PUT')
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Title</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
@@ -19,6 +20,6 @@
         <option value="3">Ali</option>
     </select>
     <br>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-primary">Update</button>
 </form>
 @endsection
